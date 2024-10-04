@@ -1,0 +1,21 @@
+
+
+************* Data Binding *************
+1. One Way Data Binding
+           => from .ts to .html
+               interpolation, property Binding
+
+
+           => from .html to .ts
+               event binding
+
+2. Twob Way Data Binding
+           => using ngModel
+
+3. Using signal ( angular 17 onwards )
+
+
+Note: Every class has a default method called a constructor. 
+      A constructor is a special method that is automatically called 
+      when an instance of the class is created.
+
