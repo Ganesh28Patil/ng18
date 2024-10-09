@@ -1,3 +1,13 @@
+h
+************* Data types in Angular *************
+
+// string, number , boolean, date
+
+courseName: string = "Angular 18";
+inputType = "checkbox";
+rollNo:number = 146;
+isIndain:boolean = true;
+currentDate: Date = new Date();
 
 
 ************* Data Binding *************
@@ -19,3 +29,23 @@ Note: Every class has a default method called a constructor.
       A constructor is a special method that is automatically called 
       when an instance of the class is created.
 
+Note : 
+      Interpolation is written in double curlly bracket {{ }}      
+      <div class = {{myClassName}}>Danger</div>  
+
+      Property Binding is written in square bracket [] 
+      <input typle="text" [value] = "courseName" />
+
+      Event Binding is done as bellow
+      showData(){
+          console.log("This is an exaple of event binding");
+          // here click event is binided to function "showData()" the button using banana bracket.
+      }
+      <button (click)="showData()" >SHOW DATA</button>  
+
+      Two way binding is given bellow 
+      isIndian: boolean = false;  
+      <input value="checkbox" [(ngModel)]="isIndian" />
+
+      firstName = signal("Angular 18");
+      this signal is invoked in html code as method  <h1> {{ firstName() }} </h2>
