@@ -72,7 +72,8 @@ Directives bring the changes on the DOM Elements
 *ngFor -   we need to pass array
            we can pass value either from
                   Variable    
-                  function                                
+                  function 
+
 
 
 

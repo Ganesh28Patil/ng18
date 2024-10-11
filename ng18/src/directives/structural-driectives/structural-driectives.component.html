@@ -1,0 +1,98 @@
+<p>structural-driectives works!</p>
+<div>
+  <span
+    ><input type="checkbox" name="sample" id="" [(ngModel)]="showContainer"
+  /></span>
+  <span> Do you want to show below statement </span>
+</div>
+
+<h1 *ngIf="showContainer">Showing container on check box</h1>
+
+<div>
+  <span>
+    <select name="country" id="" [(ngModel)]="selectedCountry">
+      <option value="">Select State</option>
+      <option value="Jordan">Jordan</option>
+      <option value="India">India</option>
+      <option value="Japan">Japan</option>
+    </select>
+  </span>
+  <span> {{ selectedCountry }} </span>
+  <span *ngIf="selectedCountry == 'India'">
+    | show this container only if India is selected</span
+  >
+</div>
+
+<hr />
+
+;'lk ;pkop[,l;,'
+
+<div>
+  <span>
+    <ul>
+      <li *ngFor="let city of maharashtra">{{ city }}</li>
+    </ul>
+  </span>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span>
+    <select name="" id="" [(ngModel)]="selectedState">
+      <option value="">States Of India</option>
+      <option [value]="states" *ngFor="let states of india">
+        {{ states }}
+      </option>
+    </select>
+    <span
+      ><b> {{ selectedState }}</b></span
+    >
+  </span>
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span>
+    <select name="" id="" [(ngModel)]="selectStudent">
+      <option value="">Students of IIT</option>
+      <option [value]="student.studId" *ngFor="let student of studentList">
+        {{ student.name }}
+      </option>
+    </select>
+    <span
+      ><b> {{ selectStudent }}</b></span
+    >
+  </span>
+
+  <br />
+  <br />
+  <br />
+
+  <table border="2px">
+    <thead>
+      <tr>
+        <th>Sr No.</th>
+        <th>Name</th>
+        <th>Student Id</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentList; let srNo = index">
+        <th>{{ srNo + 1 }}</th>
+        <td>{{ student.name }}</td>
+        <td>{{ student.studId }}</td>
+        <!-- <td>{{(student.isActive)?"Yes":"No"}}</td> -->
+        <!-- <td>
+            <span *ngIf="student.isActive">Active</span>
+            <span *ngIf="!student.isActive">De-Active</span>
+        </td> -->
+        <td>
+          <span>
+            <ng-container *ngIf="student.isActive; else elseTemplate">
+              Active
+            </ng-container>
+            <ng-template #elseTemplate> De-Active </ng-template>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
